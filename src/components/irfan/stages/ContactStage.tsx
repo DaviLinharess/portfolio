@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Check, Copy } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from '../../ui/SocialIcons';
+import { Mail, MapPin, Check, Copy } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsappIcon } from '../../ui/SocialIcons';
 import { DEVELOPER_INFO } from '../../../data/portfolioData';
 
 export function ContactStage() {
@@ -53,7 +53,7 @@ export function ContactStage() {
               title="Conversar no WhatsApp"
             >
               <div className="flex items-center gap-3">
-                <Phone size={16} className="contact-row-icon" />
+                <WhatsappIcon size={16} className="contact-row-icon" />
                 <span className="contact-row-value">+55 84 98112-8912</span>
               </div>
               <span className="contact-arrow-badge">↗</span>
@@ -109,6 +109,7 @@ export function ContactStage() {
                 className="contact-btn-black"
                 title="Iniciar conversa no WhatsApp"
               >
+                <WhatsappIcon size={14} />
                 <span>WHATSAPP</span>
               </a>
             </div>

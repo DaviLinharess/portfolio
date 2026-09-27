@@ -10,8 +10,12 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full relative overflow-hidden bg-neutral-950 flex items-center justify-center group">
         <img
-          src="/projects/winner-run.png"
+          src="/projects/winner-run.webp"
           alt="Winner Run Assessoria de Corridas"
+          width={1024}
+          height={534}
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
       </div>
@@ -22,8 +26,12 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full relative overflow-hidden bg-black flex items-center justify-center group">
         <img
-          src="/projects/big-burgs.png"
+          src="/projects/big-burgs.webp"
           alt="Big Burgs do João"
+          width={1024}
+          height={533}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
       </div>
@@ -34,46 +42,35 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full bg-white flex items-center justify-center p-2 relative overflow-hidden group">
         <img
-          src="/projects/paceweather.png"
+          src="/projects/paceweather.webp"
           alt="PaceWeather Mobile App"
+          width={408}
+          height={874}
+          loading="lazy"
+          decoding="async"
           className="h-full w-auto max-h-[190px] object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute bottom-2 right-2 pointer-events-none">
+          <span className="font-mono text-[9px] bg-slate-900/85 text-amber-400 px-2 py-0.5 rounded shadow font-bold">
+            FLUTTER • MOBILE
+          </span>
+        </div>
       </div>
     );
   }
 
   if (project.id === 'ibf-natal') {
     return (
-      <div className="project-mockup-canvas bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950">
-        <div className="mockup-header-bar">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-          </div>
-          <span className="font-mono text-[10px] text-blue-300/80">ibfnatal.com.br // portal web angular</span>
-        </div>
-        <div className="mockup-content-body flex flex-col justify-between p-4">
-          <div>
-            <span className="bg-blue-600 text-white font-bold text-[9px] px-2 py-0.5 rounded uppercase font-mono">
-              Comunidade & Fé • Natal/RN
-            </span>
-            <h4 className="text-2xl font-black text-white uppercase tracking-tight mt-2">
-              Igreja Batista Filadélfia
-            </h4>
-            <p className="text-xs text-blue-200/80 mt-1 max-w-sm">
-              Cultos ao vivo, programação semanal, grupos familiares e ministérios ativos.
-            </p>
-          </div>
-          <div className="flex items-center gap-2 mt-4 font-mono text-[10px]">
-            <span className="px-3 py-1.5 bg-blue-600 text-white font-bold rounded">
-              ASSISTIR CULTO 🎥
-            </span>
-            <span className="px-3 py-1.5 border border-blue-400/30 text-blue-200 rounded">
-              PROGRAMAÇÃO
-            </span>
-          </div>
-        </div>
+      <div className="w-full h-full relative overflow-hidden bg-black flex items-center justify-center group">
+        <img
+          src="/projects/ibf-natal.webp"
+          alt="Igreja Batista Filadélfia"
+          width={1024}
+          height={534}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
     );
   }

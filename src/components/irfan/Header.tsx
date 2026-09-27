@@ -1,5 +1,5 @@
-import { Sun, Moon, MessageCircle } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from '../ui/SocialIcons';
+import { Sun, Moon } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsappIcon } from '../ui/SocialIcons';
 import { DEVELOPER_INFO } from '../../data/portfolioData';
 
 interface HeaderProps {
@@ -75,7 +75,7 @@ export function Header({
           className="header-action-btn"
           title="WhatsApp"
         >
-          <MessageCircle size={14} />
+          <WhatsappIcon size={14} />
         </a>
 
         {/* Theme Toggle (Paper vs Dark) */}

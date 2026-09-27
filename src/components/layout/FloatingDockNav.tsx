@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, FileText, Menu, X, Terminal } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from '../ui/SocialIcons';
+import { FileText, Menu, X, Terminal } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsappIcon } from '../ui/SocialIcons';
 import { DEVELOPER_INFO } from '../../data/portfolioData';
 
 interface NavItem {
@@ -132,7 +132,7 @@ export function FloatingDockNav() {
             aria-label="WhatsApp"
             className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-emerald-400/50 hover:bg-neutral-800 transition-all duration-200"
           >
-            <MessageCircle className="w-4 h-4" />
+            <WhatsappIcon size={16} />
           </a>
 
           <a
@@ -185,7 +185,7 @@ export function FloatingDockNav() {
               <InstagramIcon size={20} />
             </a>
             <a href={DEVELOPER_INFO.links.whatsapp} target="_blank" rel="noreferrer" className="text-neutral-400 hover:text-white p-2">
-              <MessageCircle className="w-5 h-5" />
+              <WhatsappIcon size={20} />
             </a>
           </div>
         </div>
