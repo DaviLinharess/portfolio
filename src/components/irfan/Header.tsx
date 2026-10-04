@@ -101,11 +101,21 @@ export function Header({
           </button>
         </div>
 
-        {/* Mobile Header Actions (Visible on Mobile <= 768px, matching Screenshots 1, 3, 4, 5) */}
+        {/* Mobile Header Actions (Visible on Mobile <= 900px, matching Screenshots 1, 3, 4, 5) */}
         <div className="mobile-header-actions">
           <div className="mobile-lang-btn" title="Português">
             <span>文A</span>
           </div>
+
+          {/* Theme Toggle in Mobile Header */}
+          <button
+            onClick={onToggleTheme}
+            className="mobile-theme-btn cursor-pointer"
+            aria-label="Alternar Tema"
+            title={darkTheme ? "Mudar para modo Paper" : "Mudar para modo Dark"}
+          >
+            {darkTheme ? <Sun size={14} className="text-amber-400" /> : <Moon size={14} />}
+          </button>
 
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -124,8 +134,6 @@ export function Header({
         onClose={() => setMobileMenuOpen(false)}
         activeStage={activeStage}
         onNavigate={onNavigate}
-        darkTheme={darkTheme}
-        onToggleTheme={onToggleTheme}
       />
     </>
   );

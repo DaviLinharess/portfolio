@@ -1807,6 +1807,24 @@ html, body {
     background: var(--paper-card);
   }
 
+  .mobile-theme-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    background: var(--paper-card);
+    transition: all 0.15s ease;
+  }
+
+  .mobile-theme-btn:hover,
+  .mobile-theme-btn:active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
   .mobile-menu-btn {
     height: 32px;
     padding: 0 12px;

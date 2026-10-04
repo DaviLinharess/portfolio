@@ -1,4 +1,4 @@
-import { Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { GithubIcon, LinkedinIcon, InstagramIcon, WhatsappIcon } from '../ui/SocialIcons';
 import { DEVELOPER_INFO } from '../../data/portfolioData';
 
@@ -7,8 +7,6 @@ interface MobileMenuProps {
   onClose: () => void;
   activeStage: string;
   onNavigate: (stage: string, label: string) => void;
-  darkTheme: boolean;
-  onToggleTheme: () => void;
 }
 
 export function MobileMenu({
@@ -16,10 +14,43 @@ export function MobileMenu({
   onClose,
   activeStage,
   onNavigate,
-  darkTheme,
-  onToggleTheme,
 }: MobileMenuProps) {
-  if (!isOpen) return null;
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setMounted(true);
+      // Small timeout to allow DOM mounting before applying translate-x-0 class
+      const frame = requestAnimationFrame(() => {
+        setActive(true);
+      });
+      return () => cancelAnimationFrame(frame);
+    } else {
+      setActive(false);
+      const timer = setTimeout(() => {
+        setMounted(false);
+      }, 360);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setActive(false);
+    setTimeout(() => {
+      onClose();
+    }, 320);
+  };
+
+  const handleItemClick = (id: string, tag: string) => {
+    setActive(false);
+    setTimeout(() => {
+      onNavigate(id, tag);
+      onClose();
+    }, 280);
+  };
+
+  if (!mounted && !isOpen) return null;
 
   const menuItems = [
     { id: 'home', num: '01', label: 'Início', tag: 'INÍCIO' },
@@ -32,7 +63,9 @@ export function MobileMenu({
 
   return (
     <div
-      className="fixed inset-0 z-[999999] bg-[var(--paper)] text-[var(--ink)] flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200 overflow-hidden"
+      className={`fixed inset-0 z-[999999] bg-[var(--paper)] text-[var(--ink)] flex flex-col justify-between p-6 sm:p-8 overflow-hidden transition-transform duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${
+        active ? 'translate-x-0' : 'translate-x-full'
+      }`}
       role="dialog"
       aria-modal="true"
       aria-label="Menu de Navegação Mobile"
@@ -44,7 +77,14 @@ export function MobileMenu({
       />
 
       {/* Top Header Bar */}
-      <div className="relative z-10">
+      <div
+        className="relative z-10 transition-all duration-300"
+        style={{
+          opacity: active ? 1 : 0,
+          transform: active ? 'translateY(0)' : 'translateY(-10px)',
+          transitionDelay: active ? '80ms' : '0ms',
+        }}
+      >
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2.5">
             <img
@@ -56,7 +96,7 @@ export function MobileMenu({
 
           <div className="flex flex-col items-end gap-1.5">
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="px-3.5 py-1.5 bg-[var(--ink)] text-[var(--paper)] font-mono text-xs font-black tracking-wider uppercase flex items-center gap-1.5 border border-[var(--ink)] hover:opacity-90 active:scale-95 transition-all cursor-pointer"
               aria-label="Fechar Menu"
             >
@@ -73,18 +113,21 @@ export function MobileMenu({
         <div className="w-full border-b border-dashed border-[var(--line)] mt-4" />
       </div>
 
-      {/* Middle Navigation Stage List */}
+      {/* Middle Navigation Stage List with Cascading Slide-In */}
       <nav className="relative z-10 flex flex-col justify-center my-auto py-6 space-y-2">
-        {menuItems.map((item) => {
+        {menuItems.map((item, idx) => {
           const isActive = activeStage === item.id;
           return (
             <button
               key={item.id}
-              onClick={() => {
-                onNavigate(item.id, item.tag);
-                onClose();
+              onClick={() => handleItemClick(item.id, item.tag)}
+              className="flex items-baseline text-left group cursor-pointer py-1.5 transition-all duration-200 active:scale-[0.98]"
+              style={{
+                transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease',
+                transitionDelay: active ? `${100 + idx * 45}ms` : '0ms',
+                transform: active ? 'translateX(0)' : 'translateX(28px)',
+                opacity: active ? 1 : 0,
               }}
-              className="flex items-baseline text-left group cursor-pointer py-1.5 transition-transform duration-150 active:scale-[0.98]"
             >
               <span
                 className={`font-mono text-xs mr-4 font-bold tracking-wider transition-colors ${
@@ -107,8 +150,15 @@ export function MobileMenu({
         })}
       </nav>
 
-      {/* Bottom Bar: Social Icons in Square Bordered Boxes */}
-      <div className="relative z-10 pt-4 border-t border-[var(--line-subtle)] flex items-center justify-center gap-2.5">
+      {/* Bottom Bar: Social Icons in Square Bordered Boxes (Theme toggle moved to header) */}
+      <div
+        className="relative z-10 pt-4 border-t border-[var(--line-subtle)] flex items-center justify-center gap-2.5 transition-all duration-300"
+        style={{
+          opacity: active ? 1 : 0,
+          transform: active ? 'translateY(0)' : 'translateY(10px)',
+          transitionDelay: active ? '200ms' : '0ms',
+        }}
+      >
         <a
           href={DEVELOPER_INFO.links.github}
           target="_blank"
@@ -152,15 +202,6 @@ export function MobileMenu({
         >
           <WhatsappIcon size={16} />
         </a>
-
-        <button
-          onClick={onToggleTheme}
-          className="w-10 h-10 border border-[var(--line)] flex items-center justify-center bg-[var(--paper-card)] text-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--paper)] transition-colors cursor-pointer ml-1"
-          aria-label="Alternar Tema"
-          title={darkTheme ? 'Mudar para modo Paper' : 'Mudar para modo Dark'}
-        >
-          {darkTheme ? <Sun size={15} className="text-amber-400" /> : <Moon size={15} />}
-        </button>
       </div>
     </div>
   );
