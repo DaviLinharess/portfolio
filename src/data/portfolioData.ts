@@ -140,7 +140,7 @@ export const PROJECTS: ProjectItem[] = [
     featured: true,
     accentColor: "from-emerald-500/20 to-teal-600/10 border-emerald-500/40",
     year: "2025 - 2026",
-    image: "/projects/winner-run.webp"
+    image: "./projects/winner-run.webp"
   },
   {
     id: "big-burgs-joao",
@@ -160,7 +160,7 @@ export const PROJECTS: ProjectItem[] = [
     featured: true,
     accentColor: "from-amber-500/20 to-orange-600/10 border-amber-500/40",
     year: "2025 - 2026",
-    image: "/projects/big-burgs.webp"
+    image: "./projects/big-burgs.webp"
   },
   {
     id: "paceweather",
@@ -179,7 +179,7 @@ export const PROJECTS: ProjectItem[] = [
     featured: true,
     accentColor: "from-cyan-500/20 to-blue-600/10 border-cyan-500/40",
     year: "2026",
-    image: "/projects/paceweather.webp"
+    image: "./projects/paceweather.webp"
   },
   {
     id: "ibf-natal",
@@ -199,7 +199,7 @@ export const PROJECTS: ProjectItem[] = [
     featured: true,
     accentColor: "from-blue-500/20 to-indigo-600/10 border-blue-500/40",
     year: "2025 - 2026",
-    image: "/projects/ibf-natal.webp"
+    image: "./projects/ibf-natal.webp"
   },
   {
     id: "ria-lab",

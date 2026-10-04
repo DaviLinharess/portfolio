@@ -10,7 +10,7 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full relative overflow-hidden bg-neutral-950 flex items-center justify-center group">
         <img
-          src="/projects/winner-run.webp"
+          src="./projects/winner-run.webp"
           alt="Winner Run Assessoria de Corridas"
           width={1024}
           height={534}
@@ -26,7 +26,7 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full relative overflow-hidden bg-black flex items-center justify-center group">
         <img
-          src="/projects/big-burgs.webp"
+          src="./projects/big-burgs.webp"
           alt="Big Burgs do João"
           width={1024}
           height={533}
@@ -42,7 +42,7 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full bg-white flex items-center justify-center p-2 relative overflow-hidden group">
         <img
-          src="/projects/paceweather.webp"
+          src="./projects/paceweather.webp"
           alt="PaceWeather Mobile App"
           width={408}
           height={874}
@@ -63,7 +63,7 @@ function ProjectMockupImage({ project }: { project: ProjectItem }) {
     return (
       <div className="w-full h-full relative overflow-hidden bg-black flex items-center justify-center group">
         <img
-          src="/projects/ibf-natal.webp"
+          src="./projects/ibf-natal.webp"
           alt="Igreja Batista Filadélfia"
           width={1024}
           height={534}
