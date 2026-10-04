@@ -29,8 +29,8 @@ export function BentoAboutSection() {
         <SpotlightCard className="p-8 md:col-span-2 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl p-2.5 rounded-xl bg-cyan-950/60 border border-cyan-800/60">
-                👋
+              <span className="text-sm font-mono font-bold px-2.5 py-1.5 rounded-xl bg-cyan-950/60 border border-cyan-800/60 text-cyan-400">
+                DL
               </span>
               <div>
                 <h3 className="text-xl font-bold font-display uppercase tracking-wide text-white">
@@ -221,17 +221,17 @@ export function BentoAboutSection() {
 
           <div className="grid grid-cols-3 gap-2.5 my-4">
             <div className="p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-center">
-              <span className="text-xl block">🦈</span>
+              <span className="font-mono text-xs text-cyan-400 block font-bold">PS</span>
               <span className="font-mono text-[10px] text-neutral-300 block font-bold mt-1">Pull Shark</span>
               <span className="text-[9px] text-amber-400 font-mono">x2 Tier</span>
             </div>
             <div className="p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-center">
-              <span className="text-xl block">⚡</span>
+              <span className="font-mono text-xs text-amber-400 block font-bold">QD</span>
               <span className="font-mono text-[10px] text-neutral-300 block font-bold mt-1">Quickdraw</span>
               <span className="text-[9px] text-neutral-400 font-mono">Agilidade</span>
             </div>
             <div className="p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-center">
-              <span className="text-xl block">🎯</span>
+              <span className="font-mono text-xs text-emerald-400 block font-bold">YL</span>
               <span className="font-mono text-[10px] text-neutral-300 block font-bold mt-1">YOLO</span>
               <span className="text-[9px] text-neutral-400 font-mono">Merge</span>
             </div>

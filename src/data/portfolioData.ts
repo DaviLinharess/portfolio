@@ -23,26 +23,103 @@ export interface SkillCategory {
 
 export const DEVELOPER_INFO = {
   name: "Davi Linhares",
-  tagline: "Desenvolvedor Web & Mobile",
+  tagline: "Desenvolvedor Web",
   location: "Natal, RN — Brasil",
-  institution: "IFRN (Campus Natal)",
-  course: "Análise e Desenvolvimento de Sistemas (TADS)",
-  status: "Disponível para Projetos & Estágio/Júnior",
-  bio: "Estudante de Análise e Desenvolvimento de Sistemas no IFRN. Apaixonado por transformar ideias complexas em interfaces fluidas, aplicativos responsivos e arquiteturas de software sólidas — da tela ao banco de dados.",
+  institution: "Instituto Federal do Rio Grande do Norte (IFRN)",
+  campus: "Campus Natal Central",
+  course: "Tecnólogo em Análise e Desenvolvimento de Sistemas (TADS)",
+  period: "Ago. de 2024 – Atualmente",
+  status: "Finalizando TADS / Disponível para Projetos",
+  bio: "Comecei a trabalhar aos 14 anos no comércio familiar, adaptando-me em diversas funções. Finalizando o curso de Análise e Desenvolvimento de Sistemas no IFRN, sou um desenvolvedor e designer entusiasta em expandir meu conhecimento. Conheça um pouco sobre mim e minha trajetória abaixo.",
   links: {
     instagram: "https://www.instagram.com/linharessdavi",
     linkedin: "https://www.linkedin.com/in/linharessdavi/",
     github: "https://github.com/DaviLinharess",
     whatsapp: "https://wa.me/5584981128912",
     email: "davimedeiroslinhares14@gmail.com",
+    phone: "(84) 98112-8912"
   },
   stats: [
     { label: "Formação", value: "TADS IFRN" },
-    { label: "Foco Principal", value: "Web & Mobile" },
-    { label: "GitHub Badges", value: "Pull Shark x2" },
-    { label: "Status", value: "Online 🟢" },
+    { label: "Experiência", value: "Fullstack & Design" },
+    { label: "Foco Principal", value: "Web & REST APIs" },
+    { label: "Status", value: "Disponível" },
   ]
 };
+
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  period: string;
+  badge: string;
+  description: string;
+  techs: string[];
+}
+
+export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "user-function",
+    role: "Desenvolvedor Fullstack",
+    company: "User Function",
+    period: "Jun. de 2026 – Out. de 2026",
+    badge: "Fullstack",
+    description: "Suporte e melhoria contínua utilizando Angular, Node.js, PostgreSQL, além de integração direta com ERP Protheus.",
+    techs: ["Angular", "Node.js", "PostgreSQL", "ERP Protheus", "APIs REST"]
+  },
+  {
+    id: "designer-video",
+    role: "Designer Gráfico e Editor de Vídeo",
+    company: "Atuação Autônoma / Criação Visual",
+    period: "Maio de 2026 – Atualmente",
+    badge: "Design & Vídeo",
+    description: "Criação de identidades visuais, design de materiais gráficos e edição audiovisual dinâmica com domínio aprofundado do Pacote Adobe.",
+    techs: ["Pacote Adobe", "Design Gráfico", "Edição de Vídeo", "Photoshop", "Premiere"]
+  },
+  {
+    id: "freelancer-dev",
+    role: "Desenvolvedor Web",
+    company: "Freelancer",
+    period: "Jan. de 2026 – Atualmente",
+    badge: "Desenvolvimento Web",
+    description: "Desenvolvimento de projetos Fullstack e Landing Pages de alta performance, utilizando Django REST, Angular, PostgreSQL e hospedagem em Cloud.",
+    techs: ["Django REST", "Angular", "PostgreSQL", "Cloud", "Tailwind CSS"]
+  }
+];
+
+export interface ComplementaryCourse {
+  id: string;
+  title: string;
+  institution: string;
+  period: string;
+  description: string;
+}
+
+export const COMPLEMENTARY_COURSES: ComplementaryCourse[] = [
+  {
+    id: "devops-day",
+    title: "DevOps Day Natal",
+    institution: "Comunidade DevOps Natal",
+    period: "23 de Nov. de 2024",
+    description: "Imersão em cultura e práticas DevOps, integração contínua (CI/CD), containers e automação de infraestrutura."
+  },
+  {
+    id: "wtec-ifrn",
+    title: "WTEC - IFRN",
+    institution: "Instituto Federal do Rio Grande do Norte",
+    period: "Dez. de 2024 – Jun. de 2026",
+    description: "Capacitação tecnológica contínua, inovação em software e workshops práticos de desenvolvimento no IFRN."
+  }
+];
+
+export const CV_SKILLS_HIGHLIGHTS = [
+  "Conhecimento intermediário em Inglês",
+  "Frameworks REST + Angular",
+  "Experiente no Pacote Adobe",
+  "Comunicação e Trabalho em Equipe",
+  "Integração com ERP Protheus",
+  "Django REST & PostgreSQL em Cloud"
+];
 
 export const PROJECTS: ProjectItem[] = [
   {
@@ -206,23 +283,33 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: "Backend & Bancos de Dados",
     description: "Lógica de servidor, modelagem de dados e sistemas distribuídos.",
     skills: [
-      { name: "Python", level: "Sólido", icon: "binary" },
+      { name: "Django REST", level: "Sólido", icon: "server" },
       { name: "Node.js", level: "Intermediário", icon: "coffee" },
-      { name: "Java", level: "Intermediário", icon: "coffee" },
+      { name: "Python", level: "Sólido", icon: "binary" },
+      { name: "PostgreSQL", level: "Sólido", icon: "server" },
       { name: "SQL", level: "Avançado", icon: "database" },
-      { name: "Sistemas Distribuídos", level: "Acadêmico / Prático", icon: "network" },
-      { name: "PostgreSQL", level: "Sólido", icon: "server" }
+      { name: "Hospedagem em Cloud", level: "Prático", icon: "globe" },
+      { name: "ERP Protheus", level: "Integração", icon: "network" }
     ]
   },
   {
-    title: "Ferramentas & Fluxo de Trabalho",
-    description: "Ferramentas essenciais para desenvolvimento contínuo e qualidade de código.",
+    title: "Design & Multimídia (Pacote Adobe)",
+    description: "Identidade visual, criação de layouts e edição de vídeos profissionais.",
+    skills: [
+      { name: "Pacote Adobe", level: "Experiente", icon: "palette" },
+      { name: "Photoshop & Illustrator", level: "Avançado", icon: "layout" },
+      { name: "Edição de Vídeo (Premiere)", level: "Sólido", icon: "sparkles" },
+      { name: "Figma (Prototipação)", level: "Intermediário", icon: "figma" }
+    ]
+  },
+  {
+    title: "Ferramentas & Habilidades Gerais",
+    description: "Metodologias, comunicação e fluxo de trabalho contínuo.",
     skills: [
       { name: "Git & GitHub", level: "Avançado", icon: "git-branch" },
-      { name: "VS Code / Ambiente Linux", level: "Avançado", icon: "terminal" },
-      { name: "Postman", level: "Sólido", icon: "send" },
-      { name: "Figma (Prototipação)", level: "Intermediário", icon: "figma" },
-      { name: "Clean Code & Refatoração", level: "Prática Contínua", icon: "check-circle" }
+      { name: "Postman & Testes de API", level: "Sólido", icon: "send" },
+      { name: "Inglês Intermediário", level: "Leitura Técnica", icon: "globe" },
+      { name: "Comunicação & Equipe", level: "Prática Contínua", icon: "check-circle" }
     ]
   }
 ];

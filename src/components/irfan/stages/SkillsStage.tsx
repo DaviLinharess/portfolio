@@ -135,6 +135,32 @@ function SkillIcon({ name }: { name: string }) {
           SM
         </span>
       );
+    case 'DJANGO REST':
+      return (
+        <span className="w-3.5 h-3.5 bg-emerald-800 text-white font-mono text-[6.5px] font-black rounded-[1px] flex items-center justify-center">
+          DJ
+        </span>
+      );
+    case 'PACOTE ADOBE':
+    case 'ADOBE':
+      return (
+        <span className="w-3.5 h-3.5 bg-red-600 text-white font-mono text-[6.5px] font-black rounded-[1px] flex items-center justify-center">
+          PS
+        </span>
+      );
+    case 'ERP PROTHEUS':
+    case 'PROTHEUS':
+      return (
+        <span className="w-3.5 h-3.5 bg-indigo-600 text-white font-mono text-[6px] font-black rounded-[1px] flex items-center justify-center">
+          TOTVS
+        </span>
+      );
+    case 'CLOUD':
+      return (
+        <svg className="w-3.5 h-3.5 text-sky-400" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+        </svg>
+      );
     default:
       return <span className="w-2 h-2 rounded-full bg-current opacity-60" />;
   }
@@ -174,11 +200,11 @@ function MarqueeRow({ title, subtitle, skills }: MarqueeRowProps) {
 
 export function SkillsStage() {
   const webSkills = ['ANGULAR', 'REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'JAVASCRIPT', 'HTML5', 'CSS3'];
-  const backendSkills = ['NODE.JS', 'EXPRESS', 'PYTHON', 'POSTGRESQL', 'MYSQL'];
-  const systemsSkills = ['API REST', 'SOAP', 'PYTHON', 'LINUX', 'TCP/UDP'];
+  const backendSkills = ['DJANGO REST', 'NODE.JS', 'EXPRESS', 'POSTGRESQL', 'MYSQL', 'ERP PROTHEUS'];
+  const systemsSkills = ['API REST', 'SOAP', 'ERP PROTHEUS', 'CLOUD', 'LINUX', 'TCP/UDP'];
   const mobileSkills = ['FLUTTER', 'DART', 'MOBILE UX', 'STATE MANAGEMENT'];
   const dataSkills = ['POSTGRESQL', 'MYSQL', 'SQL MODELING', 'MODELAGEM RELACIONAL', 'CONSULTAS SQL'];
-  const devopsSkills = ['GIT', 'DOCKER', 'POSTMAN', 'LINUX', 'FIGMA'];
+  const devopsSkills = ['GIT', 'DOCKER', 'POSTMAN', 'CLOUD', 'LINUX', 'PACOTE ADOBE'];
 
   return (
     <section className="stage stage--skills" aria-live="polite">
@@ -200,26 +226,26 @@ export function SkillsStage() {
           <div className="skills-col skills-col--left">
             {/* Box 1: Core Direction */}
             <div className="irfan-card skills-direction-card">
-              <span className="skills-tag-pill">DIREÇÃO PRINCIPAL</span>
+              <span className="skills-tag-pill">DIREÇÃO PROFISSIONAL</span>
               <h2 className="skills-direction-title">
-                Desenvolvedor full-stack focado em aplicações web modernas, ecossistema mobile e sistemas distribuídos.
+                Desenvolvedor Web Full-Stack com experiência prática em Angular, Node.js, Django REST e integração ERP.
               </h2>
               <p className="skills-direction-desc">
-                Construo a solução técnica com foco em estabilidade e performance, acompanhada de boa documentação, planejamento e arquitetura sólida.
+                Trajetória iniciada no comércio familiar aos 14 anos trazendo grande versatilidade, comunicação ágil e dedicação contínua à excelência técnica e multimídia.
               </p>
 
               <div className="skills-tri-metrics">
                 <div className="tri-metric-box">
-                  <span className="tri-label">FOCO TI</span>
-                  <strong className="tri-val">Web, Mobile, Sistemas</strong>
+                  <span className="tri-label">FOCO PRINCIPAL</span>
+                  <strong className="tri-val">Web Fullstack & Cloud</strong>
                 </div>
                 <div className="tri-metric-box">
-                  <span className="tri-label">SUPORTE</span>
-                  <strong className="tri-val">Design, docs, arquitetura</strong>
+                  <span className="tri-label">MULTIMÍDIA</span>
+                  <strong className="tri-val">Pacote Adobe & Vídeo</strong>
                 </div>
                 <div className="tri-metric-box">
-                  <span className="tri-label">ENTREGA</span>
-                  <strong className="tri-val">Construção, docs e deploy</strong>
+                  <span className="tri-label">DIFERENCIAIS</span>
+                  <strong className="tri-val">Inglês Interm. & Protheus</strong>
                 </div>
               </div>
             </div>
@@ -227,27 +253,37 @@ export function SkillsStage() {
             {/* Box 2: Project Delivery */}
             <div className="irfan-card skills-delivery-card">
               <div className="irfan-card-header">
-                <span className="irfan-card-label">ENTREGA DE PROJETOS</span>
-                <span className="irfan-card-tag">DESIGN / DOCS / FERRAMENTAS</span>
+                <span className="irfan-card-label">ENTREGA & DIFERENCIAIS DO CV</span>
+                <span className="irfan-card-tag">CREATIVE / ERP / CLOUD</span>
               </div>
 
               <div className="delivery-section">
-                <span className="delivery-section-label">VISUAL & LAYOUT</span>
+                <span className="delivery-section-label">DESIGN MULTIMÍDIA & LAYOUT</span>
                 <div className="delivery-tags">
+                  <span className="delivery-pill"><SkillIcon name="PACOTE ADOBE" /> PACOTE ADOBE (PS/PR)</span>
                   <span className="delivery-pill"><SkillIcon name="FIGMA" /> FIGMA</span>
-                  <span className="delivery-pill">CANVA</span>
+                  <span className="delivery-pill">EDIÇÃO DE VÍDEO</span>
                   <span className="delivery-pill"><SkillIcon name="TAILWIND CSS" /> TAILWIND CSS</span>
-                  <span className="delivery-pill">UI/UX</span>
                 </div>
               </div>
 
               <div className="delivery-section mt-3">
-                <span className="delivery-section-label">DOCUMENTAÇÃO & AMBIENTE DEV</span>
+                <span className="delivery-section-label">INTEGRAÇÃO, CLOUD & FERRAMENTAL</span>
                 <div className="delivery-tags">
-                  <span className="delivery-pill">MARKDOWN</span>
-                  <span className="delivery-pill"><SkillIcon name="GIT" /> GIT CLI</span>
-                  <span className="delivery-pill">VS CODE</span>
+                  <span className="delivery-pill"><SkillIcon name="ERP PROTHEUS" /> ERP PROTHEUS</span>
+                  <span className="delivery-pill"><SkillIcon name="CLOUD" /> HOSPEDAGEM CLOUD</span>
+                  <span className="delivery-pill"><SkillIcon name="GIT" /> GIT & GITHUB</span>
                   <span className="delivery-pill">POSTMAN</span>
+                </div>
+              </div>
+
+              <div className="delivery-section mt-3">
+                <span className="delivery-section-label">COMPETÊNCIAS INTERPESSOAIS & IDIOMA</span>
+                <div className="delivery-tags">
+                  <span className="delivery-pill text-emerald-400 font-medium">INGLÊS INTERMEDIÁRIO</span>
+                  <span className="delivery-pill text-white/90">COMUNICAÇÃO ASSERTIVA</span>
+                  <span className="delivery-pill text-white/90">TRABALHO EM EQUIPE</span>
+                  <span className="delivery-pill text-white/90">VERSATILIDADE</span>
                 </div>
               </div>
             </div>

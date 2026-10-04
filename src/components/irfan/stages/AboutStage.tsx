@@ -95,9 +95,9 @@ export function AboutStage() {
               <div className="irfan-card-header">
                 <span className="irfan-card-label">DIREÇÃO ATUAL</span>
               </div>
-              <h2 className="about-direction-title">Desenvolvedor Full-Stack.</h2>
+              <h2 className="about-direction-title">Desenvolvedor Web.</h2>
               <p className="about-direction-desc">
-                Desenvolvo sistemas de ponta a ponta, da interface ao banco de dados. Foco em aplicações web escaláveis (Angular, React, TypeScript), soluções mobile em Flutter e arquiteturas distribuídas com APIs REST.
+                Comecei a trabalhar aos 14 anos no comércio familiar, adaptando-me em diversas funções. Finalizando o curso de Análise e Desenvolvimento de Sistemas no IFRN, atuo no desenvolvimento full-stack com foco em Angular, Node.js, Django REST, PostgreSQL e design multimídia com o Pacote Adobe.
               </p>
             </div>
 
@@ -154,23 +154,41 @@ export function AboutStage() {
             </div>
           </div>
 
-          {/* COLUMN 2: WORK / PRACTICE LOG */}
+          {/* COLUMN 2: PROFESSIONAL EXPERIENCE LOG */}
           <div className="about-col about-col--scrollable">
             <div className="irfan-card about-feed-card">
               <div className="irfan-card-header">
                 <span className="irfan-card-label">
                   <span className="label-bullet">■</span> EXPERIÊNCIA
                 </span>
-                <span className="irfan-card-tag">REGISTRO PRÁTICO</span>
+                <span className="irfan-card-tag">HISTÓRICO PROFISSIONAL</span>
               </div>
 
               <div className="about-feed-list">
                 <article className="feed-entry">
                   <div className="feed-entry-badge">2026</div>
-                  <h3 className="feed-entry-title">Big Burgs do João</h3>
-                  <div className="feed-entry-subtitle">WEB COMERCIAL // TAILWIND & JAVASCRIPT</div>
+                  <h3 className="feed-entry-title">User Function</h3>
+                  <div className="feed-entry-subtitle">DESENVOLVEDOR FULLSTACK // ANGULAR + NODE.JS + ERP PROTHEUS</div>
                   <p className="feed-entry-body">
-                    Landing page comercial responsiva com foco em conversão direta de pedidos, carregamento rápido e navegação fluida.
+                    Suporte e melhoria contínua desenvolvendo soluções com Angular, Node.js e PostgreSQL, além de integração direta com ERP Protheus.
+                  </p>
+                </article>
+
+                <article className="feed-entry">
+                  <div className="feed-entry-badge">2026 - ATUAL</div>
+                  <h3 className="feed-entry-title">Designer Gráfico e Editor de Vídeo</h3>
+                  <div className="feed-entry-subtitle">CRIAÇÃO VISUAL // PACOTE ADOBE</div>
+                  <p className="feed-entry-body">
+                    Criação de identidades visuais, design de peças gráficas comerciais e edição dinâmica de vídeos com domínio aprofundado do Pacote Adobe.
+                  </p>
+                </article>
+
+                <article className="feed-entry">
+                  <div className="feed-entry-badge">2026 - ATUAL</div>
+                  <h3 className="feed-entry-title">Freelancer Web Developer</h3>
+                  <div className="feed-entry-subtitle">FULLSTACK WEB // DJANGO REST + ANGULAR + CLOUD</div>
+                  <p className="feed-entry-body">
+                    Desenvolvimento de projetos Fullstack e Landing Pages de alta conversão, utilizando Django REST, Angular, PostgreSQL e hospedagem em Cloud.
                   </p>
                 </article>
 
@@ -185,10 +203,10 @@ export function AboutStage() {
 
                 <article className="feed-entry">
                   <div className="feed-entry-badge">2026</div>
-                  <h3 className="feed-entry-title">PaceWeather & Mobile Ecosystem</h3>
-                  <div className="feed-entry-subtitle">APLICATIVO MOBILE // FLUTTER & DART</div>
+                  <h3 className="feed-entry-title">Big Burgs do João</h3>
+                  <div className="feed-entry-subtitle">WEB COMERCIAL // TAILWIND & JAVASCRIPT</div>
                   <p className="feed-entry-body">
-                    Aplicativo meteorológico mobile reativo integrando API da OpenWeather, previsões geolocalizadas e ritmo de treino para corredores.
+                    Landing page comercial responsiva com foco em conversão direta de pedidos, carregamento rápido e navegação fluida.
                   </p>
                 </article>
 
@@ -200,63 +218,54 @@ export function AboutStage() {
                     Landing page esportiva institucional com Tailwind CSS, SEO semântico, apresentação de treinos e direcionamento para conversão.
                   </p>
                 </article>
-
-                <article className="feed-entry">
-                  <div className="feed-entry-badge">2026</div>
-                  <h3 className="feed-entry-title">Sistemas Distribuídos (DSD) </h3>
-                  <div className="feed-entry-subtitle">ARQUITETURA ACADÊMICA IFRN // ANGULAR & DJANGO</div>
-                  <p className="feed-entry-body">
-                    Comunicação entre interface e sistema com APIs REST, consumindo banco de dados relacional.
-                  </p>
-                </article>
-
-                <article className="feed-entry">
-                  <div className="feed-entry-badge">2025</div>
-                  <h3 className="feed-entry-title">Banco de Dados (PA-BD)</h3>
-                  <div className="feed-entry-subtitle">SISTEMAS RELACIONAIS // POSTGRESQL</div>
-                  <p className="feed-entry-body">
-                    Modelagem relacional DER, sistemas relacionais, progrmação e administração em banco de dados.
-                  </p>
-                </article>
               </div>
             </div>
           </div>
 
-          {/* COLUMN 3: EDUCATION / FORMAL TRACK */}
+          {/* COLUMN 3: EDUCATION & COMPLEMENTARY COURSES */}
           <div className="about-col about-col--scrollable">
             <div className="irfan-card about-feed-card">
               <div className="irfan-card-header">
                 <span className="irfan-card-label">
                   <span className="label-bullet">■</span> FORMAÇÃO
                 </span>
-                <span className="irfan-card-tag">HISTÓRICO ACADÊMICO</span>
+                <span className="irfan-card-tag">ACADÊMICO & CURSOS</span>
               </div>
 
               <div className="about-feed-list">
                 <article className="feed-entry">
-                  <div className="feed-entry-badge">2024 - 2027</div>
-                  <h3 className="feed-entry-title">Instituto Federal do RN (IFRN)</h3>
-                  <div className="feed-entry-subtitle">GRADUAÇÃO // TADS (CAMPUS NATAL CENTRAL)</div>
+                  <div className="feed-entry-badge">2024 - ATUAL</div>
+                  <h3 className="feed-entry-title">IFRN - Campus Natal Central</h3>
+                  <div className="feed-entry-subtitle">TECNÓLOGO EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</div>
                   <p className="feed-entry-body">
-                    Tecnologia em Análise e Desenvolvimento de Sistemas. Formação focada em Arquitetura de software, sistemas web, bancos de dados e qualidade de software.
+                    Finalizando o curso de TADS. Formação com sólida base em Engenharia de Software, Arquitetura de Sistemas, Bancos de Dados e Desenvolvimento Web.
+                  </p>
+                </article>
+
+                <article className="feed-entry">
+                  <div className="feed-entry-badge">2024 - 2026</div>
+                  <h3 className="feed-entry-title">WTEC - IFRN</h3>
+                  <div className="feed-entry-subtitle">CAPACITAÇÃO TECNOLÓGICA // IFRN</div>
+                  <p className="feed-entry-body">
+                    Workshops de inovação, capacitação tecnológica contínua e desenvolvimento de software promovidos pelo IFRN.
+                  </p>
+                </article>
+
+                <article className="feed-entry">
+                  <div className="feed-entry-badge">2024</div>
+                  <h3 className="feed-entry-title">DevOps Day Natal</h3>
+                  <div className="feed-entry-subtitle">IMERSÃO EM DEVOPS & CI/CD</div>
+                  <p className="feed-entry-body">
+                    Evento e imersão prática em cultura DevOps, automação de infraestrutura, pipelines CI/CD e conteinerização.
                   </p>
                 </article>
 
                 <article className="feed-entry">
                   <div className="feed-entry-badge">2020 - 2023</div>
                   <h3 className="feed-entry-title">Ensino Médio </h3>
-                  <div className="feed-entry-subtitle">FORMAÇÃO DE NÍVEL MÉDIO</div>
+                  <div className="feed-entry-subtitle">FORMAÇÃO DE NÍVEL MÉDIO // FACEX</div>
                   <p className="feed-entry-body">
-                    Formação de nível médio na escola "FACEX".
-                  </p>
-                </article>
-
-                <article className="feed-entry">
-                  <div className="feed-entry-badge">CONTÍNUO</div>
-                  <h3 className="feed-entry-title">Especialização Tecnológica Autônoma</h3>
-                  <div className="feed-entry-subtitle">ECOSSISTEMA WEB & MOBILE</div>
-                  <p className="feed-entry-body">
-                    Prática contínua em frameworks reativos modernos (Angular, React), TypeScript avançado, Flutter mobile, APIs REST e arquiteturas de banco de dados.
+                    Formação de nível médio completa na escola FACEX.
                   </p>
                 </article>
               </div>
