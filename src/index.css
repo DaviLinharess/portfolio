@@ -1669,3 +1669,408 @@ html, body {
 .dark-theme ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* ========================================================
+   RESPONSIVE MOBILE SYSTEM (MATCHING IRFAN SABRIAN MOBILE)
+   Faithfully adapting layout for screens <= 768px
+   ======================================================== */
+
+.mobile-header-actions {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Touch & Cursor Defaults */
+  *,
+  *::before,
+  *::after,
+  html,
+  body,
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    cursor: auto !important;
+  }
+
+  .irfan-target-cursor {
+    display: none !important;
+  }
+
+  /* Natural Mobile Viewport Scrolling */
+  html, body {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100%;
+  }
+
+  .portfolio-root {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    overflow-y: visible !important;
+    display: block !important;
+  }
+
+  .portfolio-frame {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .frame-body {
+    flex-direction: column !important;
+    overflow: visible !important;
+    height: auto !important;
+    flex: 1 !important;
+  }
+
+  .side-nav {
+    display: none !important;
+  }
+
+  .frame-footer {
+    display: none !important;
+  }
+
+  /* Mobile Header */
+  .frame-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 40 !important;
+    height: 52px !important;
+    padding: 0 16px !important;
+    background: rgba(236, 236, 233, 0.88) !important;
+    backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .dark-theme .frame-header {
+    background: rgba(11, 12, 16, 0.88) !important;
+  }
+
+  .desktop-header-actions {
+    display: none !important;
+  }
+
+  .mobile-header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .mobile-lang-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--paper-card);
+  }
+
+  .mobile-menu-btn {
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    background: var(--paper-card);
+    transition: all 0.15s ease;
+  }
+
+  .mobile-menu-btn:hover,
+  .mobile-menu-btn:active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .stage-viewport {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: calc(100dvh - 52px) !important;
+    flex: 1 !important;
+  }
+
+  .stage {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: calc(100dvh - 52px) !important;
+    padding: 16px 16px 36px 16px !important;
+  }
+
+  /* STAGE 1: HOME MOBILE (Screenshot 1) */
+  .stage--home {
+    padding: 16px 16px 32px 16px !important;
+  }
+
+  .home-scene {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .home-title {
+    margin-top: 8px;
+  }
+
+  .home-title h1 {
+    font-size: clamp(2.3rem, 9vw, 3.2rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  .home-role {
+    font-size: clamp(1.2rem, 5.5vw, 1.8rem) !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .home-intro-copy {
+    display: none !important; /* Screenshot 1 focuses directly on title + role + action buttons */
+  }
+
+  .home-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+
+  .home-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0 10px !important;
+    font-size: 10.5px !important;
+    height: 38px !important;
+  }
+
+  /* Capability Map (Screenshot 1 2x2 Grid) */
+  .capability-bar-wrapper {
+    margin-top: 24px !important;
+    padding-top: 0 !important;
+  }
+
+  .capability-bar {
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+  }
+
+  .cap-card--lead {
+    grid-column: 1 / -1 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+    padding: 12px 14px !important;
+  }
+
+  .cap-card:nth-child(2),
+  .cap-card:nth-child(4) {
+    border-right: 1px solid var(--line) !important;
+  }
+
+  .cap-card:nth-child(3),
+  .cap-card:nth-child(5) {
+    border-right: none !important;
+  }
+
+  .cap-card:nth-child(2),
+  .cap-card:nth-child(3) {
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .cap-card {
+    min-height: 86px !important;
+    padding: 12px 14px !important;
+    position: relative !important;
+  }
+
+  .cap-title {
+    font-size: 12px !important;
+    margin: 4px 0 0 0 !important;
+  }
+
+  .cap-body {
+    display: none !important; /* In Screenshot 1, body copy is hidden for compact 2x2 grid */
+  }
+
+  .cap-diamond {
+    position: absolute !important;
+    bottom: 8px !important;
+    right: 10px !important;
+    font-size: 18px !important;
+    opacity: 0.35 !important;
+  }
+
+  /* STAGE 2: ABOUT MOBILE (Screenshot 3) */
+  .about-scene {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .about-headline {
+    font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
+  }
+
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    overflow: visible !important;
+  }
+
+  .about-col {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .heatmap-matrix {
+    overflow-x: auto !important;
+    padding-bottom: 6px !important;
+  }
+
+  /* STAGE 3: PROJECTS MOBILE (Screenshot 4) */
+  .work-scene {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .work-headline {
+    font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
+  }
+
+  .project-console {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    border: 1px solid var(--line) !important;
+  }
+
+  .project-index {
+    display: none !important; /* In Screenshot 4, project-list is hidden; user navigates with dossier arrows */
+  }
+
+  .project-focus {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .project-dossier-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+
+  .dossier-main {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+    padding: 16px !important;
+    overflow: visible !important;
+  }
+
+  .dossier-visual-frame {
+    height: 190px !important;
+  }
+
+  .dossier-sidebar {
+    padding: 16px !important;
+    overflow: visible !important;
+  }
+
+  .project-focus-toolbar {
+    padding: 0 12px !important;
+    height: 38px !important;
+  }
+
+  /* STAGE 4: SKILLS MOBILE (Screenshot 5) */
+  .skills-scene {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .skills-headline {
+    font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
+  }
+
+  .skills-heading-bar {
+    margin-bottom: 12px !important;
+  }
+
+  .skills-status-badge {
+    display: none !important;
+  }
+
+  .skills-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    overflow: visible !important;
+  }
+
+  .skills-col {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .skills-tri-metrics {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* STAGE 5: CREDENTIALS MOBILE */
+  .stage--credentials {
+    padding: 16px 16px 36px 16px !important;
+  }
+
+  /* STAGE 6: CONTACT MOBILE */
+  .contact-scene {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .contact-left {
+    width: 100% !important;
+  }
+
+  .contact-huge-headline {
+    font-size: clamp(2.2rem, 8vw, 3.4rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .contact-right {
+    width: 100% !important;
+  }
+
+  .contact-card-box {
+    width: 100% !important;
+  }
+
+  /* CV Modal on Mobile */
+  .modal-dialog-box {
+    width: 95vw !important;
+    max-height: 92vh !important;
+    padding: 16px !important;
+  }
+}
+
