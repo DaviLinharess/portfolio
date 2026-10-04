@@ -1672,15 +1672,15 @@ html, body {
 
 /* ========================================================
    RESPONSIVE MOBILE SYSTEM (MATCHING IRFAN SABRIAN MOBILE)
-   Faithfully adapting layout for screens <= 768px
+   Faithfully adapting layout and enabling smooth scrolling for screens <= 900px
    ======================================================== */
 
 .mobile-header-actions {
   display: none;
 }
 
-@media (max-width: 768px) {
-  /* Touch & Cursor Defaults */
+@media (max-width: 900px) {
+  /* Touch & Cursor Defaults: Enable native touch behavior */
   *,
   *::before,
   *::after,
@@ -1698,41 +1698,62 @@ html, body {
     display: none !important;
   }
 
-  /* Natural Mobile Viewport Scrolling */
-  html, body {
-    overflow-y: auto !important;
+  /* 1. Global Document Scroll Unlock */
+  html {
+    width: 100% !important;
     height: auto !important;
-    min-height: 100%;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
   }
 
+  body {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    position: static !important;
+  }
+
+  /* 2. Portfolio Root & Frame (Full natural document flow) */
   .portfolio-root {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
+    height: auto !important;
     min-height: 100vh !important;
     min-height: 100dvh !important;
+    overflow-x: hidden !important;
     overflow-y: visible !important;
     display: block !important;
   }
 
   .portfolio-frame {
+    position: relative !important;
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: 100vh !important;
     min-height: 100dvh !important;
+    margin: 0 !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     overflow: visible !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
   }
 
   .frame-body {
-    flex-direction: column !important;
-    overflow: visible !important;
+    position: relative !important;
+    width: 100% !important;
     height: auto !important;
-    flex: 1 !important;
+    overflow: visible !important;
+    display: block !important;
   }
 
   .side-nav {
@@ -1743,20 +1764,23 @@ html, body {
     display: none !important;
   }
 
-  /* Mobile Header */
+  /* 3. Sticky Mobile Header (Pins cleanly to top) */
   .frame-header {
     position: sticky !important;
     top: 0 !important;
-    z-index: 40 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
     height: 52px !important;
     padding: 0 16px !important;
-    background: rgba(236, 236, 233, 0.88) !important;
-    backdrop-filter: blur(14px) !important;
+    background: rgba(236, 236, 233, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
     border-bottom: 1px solid var(--line) !important;
   }
 
   .dark-theme .frame-header {
-    background: rgba(11, 12, 16, 0.88) !important;
+    background: rgba(11, 12, 16, 0.94) !important;
   }
 
   .desktop-header-actions {
@@ -1805,30 +1829,73 @@ html, body {
     color: var(--paper);
   }
 
+  /* 4. Stage Viewport & Stages Unlock */
   .stage-viewport {
-    overflow: visible !important;
+    position: relative !important;
+    width: 100% !important;
     height: auto !important;
+    min-height: calc(100vh - 52px) !important;
     min-height: calc(100dvh - 52px) !important;
-    flex: 1 !important;
+    overflow: visible !important;
+    display: block !important;
   }
 
-  .stage {
-    overflow: visible !important;
+  .stage,
+  .stage--home,
+  .stage--about,
+  .stage--work,
+  .stage--skills,
+  .stage--credentials,
+  .stage--contact {
+    position: relative !important;
+    width: 100% !important;
     height: auto !important;
+    min-height: calc(100vh - 52px) !important;
     min-height: calc(100dvh - 52px) !important;
-    padding: 16px 16px 36px 16px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    padding: 16px 16px 56px 16px !important;
+  }
+
+  .home-scene,
+  .about-scene,
+  .work-scene,
+  .skills-scene,
+  .skill-scene,
+  .contact-scene {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  /* 5. Fixed Background Canvas & Line Art (Never interferes with scroll) */
+  .dot-canvas {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  .home-line-art {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    opacity: 0.2 !important;
   }
 
   /* STAGE 1: HOME MOBILE (Screenshot 1) */
-  .stage--home {
-    padding: 16px 16px 32px 16px !important;
-  }
-
-  .home-scene {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
   .home-title {
     margin-top: 8px;
   }
@@ -1845,7 +1912,7 @@ html, body {
   }
 
   .home-intro-copy {
-    display: none !important; /* Screenshot 1 focuses directly on title + role + action buttons */
+    display: none !important;
   }
 
   .home-actions {
@@ -1864,15 +1931,17 @@ html, body {
     height: 38px !important;
   }
 
-  /* Capability Map (Screenshot 1 2x2 Grid) */
   .capability-bar-wrapper {
     margin-top: 24px !important;
     padding-top: 0 !important;
+    width: 100% !important;
   }
 
   .capability-bar {
+    display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     width: 100% !important;
+    overflow: hidden !important;
   }
 
   .cap-card--lead {
@@ -1885,16 +1954,17 @@ html, body {
   .cap-card:nth-child(2),
   .cap-card:nth-child(4) {
     border-right: 1px solid var(--line) !important;
+    border-bottom: 1px solid var(--line) !important;
   }
 
-  .cap-card:nth-child(3),
+  .cap-card:nth-child(3) {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
   .cap-card:nth-child(5) {
     border-right: none !important;
-  }
-
-  .cap-card:nth-child(2),
-  .cap-card:nth-child(3) {
-    border-bottom: 1px solid var(--line) !important;
+    border-bottom: none !important;
   }
 
   .cap-card {
@@ -1909,7 +1979,7 @@ html, body {
   }
 
   .cap-body {
-    display: none !important; /* In Screenshot 1, body copy is hidden for compact 2x2 grid */
+    display: none !important;
   }
 
   .cap-diamond {
@@ -1921,11 +1991,6 @@ html, body {
   }
 
   /* STAGE 2: ABOUT MOBILE (Screenshot 3) */
-  .about-scene {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
   .about-headline {
     font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
   }
@@ -1933,66 +1998,80 @@ html, body {
   .about-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 14px !important;
+    gap: 16px !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
-  .about-col {
+  .about-col,
+  .about-col--profile,
+  .about-col--log,
+  .about-col--academy {
     width: 100% !important;
     overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .about-feed-list {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
   }
 
   .heatmap-matrix {
     overflow-x: auto !important;
     padding-bottom: 6px !important;
+    max-width: 100% !important;
   }
 
   /* STAGE 3: PROJECTS MOBILE (Screenshot 4) */
-  .work-scene {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
   .work-headline {
     font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
   }
 
   .project-console {
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
     overflow: visible !important;
+    height: auto !important;
     border: 1px solid var(--line) !important;
   }
 
   .project-index {
-    display: none !important; /* In Screenshot 4, project-list is hidden; user navigates with dossier arrows */
+    display: none !important;
   }
 
   .project-focus {
     width: 100% !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
   .project-dossier-grid {
     display: flex !important;
     flex-direction: column !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
   .dossier-main {
+    width: 100% !important;
     border-right: none !important;
     border-bottom: 1px solid var(--line) !important;
     padding: 16px !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
   .dossier-visual-frame {
-    height: 190px !important;
+    height: 195px !important;
   }
 
   .dossier-sidebar {
+    width: 100% !important;
     padding: 16px !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
   .project-focus-toolbar {
@@ -2001,11 +2080,6 @@ html, body {
   }
 
   /* STAGE 4: SKILLS MOBILE (Screenshot 5) */
-  .skills-scene {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
   .skills-headline {
     font-size: clamp(1.8rem, 6.5vw, 2.6rem) !important;
   }
@@ -2023,11 +2097,21 @@ html, body {
     flex-direction: column !important;
     gap: 14px !important;
     overflow: visible !important;
+    height: auto !important;
   }
 
-  .skills-col {
+  .skills-col,
+  .skills-col--left,
+  .skills-col--right {
     width: 100% !important;
     overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .skills-stack-list {
+    overflow: visible !important;
+    height: auto !important;
   }
 
   .skills-tri-metrics {
@@ -2036,8 +2120,11 @@ html, body {
   }
 
   /* STAGE 5: CREDENTIALS MOBILE */
-  .stage--credentials {
-    padding: 16px 16px 36px 16px !important;
+  .stage--credentials .skill-scene,
+  .stage--credentials .grid {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   /* STAGE 6: CONTACT MOBILE */
@@ -2051,6 +2138,7 @@ html, body {
 
   .contact-left {
     width: 100% !important;
+    overflow: visible !important;
   }
 
   .contact-huge-headline {
@@ -2060,10 +2148,12 @@ html, body {
 
   .contact-right {
     width: 100% !important;
+    overflow: visible !important;
   }
 
   .contact-card-box {
     width: 100% !important;
+    overflow: visible !important;
   }
 
   /* CV Modal on Mobile */
@@ -2073,4 +2163,5 @@ html, body {
     padding: 16px !important;
   }
 }
+
 

@@ -31,6 +31,7 @@ export function App() {
       // Switch stage content halfway through the wipe transition
       setTimeout(() => {
         setActiveStage(targetStage);
+        window.scrollTo({ top: 0, behavior: 'instant' });
       }, 350);
     },
     [activeStage, isTransitioning]
